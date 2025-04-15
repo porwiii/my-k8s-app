@@ -1,22 +1,24 @@
 # my-k8s-app
 
+### Commands for running Kubernetes application with Minikube
+
 Start Minikube:
 
-minikube start
+* minikube start
 
 Configure Docker Environment (if using local images):
 
-eval $(minikube docker-env)
+* eval $(minikube docker-env)
 
 Install the NFS Provisioner Using Helm:
 
-helm repo add nfs-provisioner https://kubernetes-sigs.github.io/nfs-ganesha-server-and-external-provisioner  
-helm repo update  
-helm install nfs nfs-provisioner/nfs-server-provisioner \  
+* helm repo add nfs-provisioner https://kubernetes-sigs.github.io/nfs-ganesha-server-and-external-provisioner  
+* helm repo update  
+* helm install nfs nfs-provisioner/nfs-server-provisioner \  
   --set storageClass.name="nfs-storage" \  
   --set storageClass.defaultClass="true"  
   
-Deploy the YAML Resources in Order:
+#### Deploy the YAML Resources in Order:
 
 Persistent Volume Claim:
 
